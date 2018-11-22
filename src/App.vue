@@ -2,7 +2,7 @@
   <div id="app">
     
     <h1>Hola mundo</h1>
-    <Test/>
+    <Test msg="Hola desde componente padre"/>
   </div>
 </template>
 

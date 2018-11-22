@@ -15,6 +15,17 @@
             </li>
            
         </ul>
+        <input type="text" v-model="user.firstName">
+        <button type="button" v-on:click="Saludar(user.firstName)">click</button>
+        <hr>
+        <input type="text" v-on:keyup.enter="typingEnter">
+        <hr>
+        <div>
+            {{fullName}}
+        </div>
+        <div class="test">
+            {{msg}}
+        </div>
     </div>
 </template>
 <script>
@@ -34,8 +45,32 @@
                     ,{title:'play'}
                 ]
             }
+        },
+        methods:{
+            Saludar(name){
+                alert("Hello "+name);
+            },
+            typingEnter(e){
+                console.log("dio un enter");
+                //console.log(e.target.value);
+               // if(e.target.keyCode==13)
+            }
+        },
+        computed:{
+            fullName(){
+                return this.user.firstName+' '+this.user.lastName;
+            }
+        },
+        props:{
+            msg:{
+                type:String,
+                default:'Mensaje por defecto'
+            }
         }
     }
 </script>
-<style>
+<style media="screem">
+.test{
+    background-color: #eee;
+}
 </style>
