@@ -3,6 +3,7 @@
     
     <h1>Hola mundo</h1>
     <Test msg="Hola desde componente padre"/>
+    <User/>
   </div>
 </template>
 
@@ -11,11 +12,13 @@
  
  
 import Test from './components/Test.vue';
+import User from './components/User.vue';
 export default {
   
   name: 'App',
   components: {
-    Test
+    Test,
+    User
   }
 }
 </script>
