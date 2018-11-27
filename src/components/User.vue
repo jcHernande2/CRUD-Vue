@@ -53,6 +53,11 @@
                 this.users.splice(this.users.indexOf(user),1);
                 //alert("eleiminando");
             }
+        },
+        created(){
+            this.$http.get('https://jsonplaceholder.typicode.com/users')
+            .then(res=>this.users=res.body);
+            //console.log("componente create");
         }
   }
 </script>

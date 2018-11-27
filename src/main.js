@@ -3,11 +3,38 @@
 import Vue from 'vue'
 import App from './App'
 
+import vueResource from  'vue-resource'
+Vue.use(vueResource)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import Test from './components/Test'
+import User from './components/User'
+
+const router=new VueRouter({
+  mode:'history',
+  base:__dirname,
+  routes:[
+    {
+      path:'/',
+      component:User
+    },
+    {
+      path:'/test',
+      component:Test
+    }
+  ]
+
+})
+
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+ //el: '#app',
 new Vue({
-  el: '#app',
-  components: { App },
+ 
+  router,
+  components: { App},
   template: '<App/>'
-})
+}).$mount('#app')
